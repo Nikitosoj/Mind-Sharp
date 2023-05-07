@@ -10,7 +10,7 @@ class homeScreen extends StatefulWidget {
 
 class _homeScreenState extends State<homeScreen> {
   int _selectedtab = 0;
-  static const List<Widget> _homeBarWidgets = <Widget>[
+  static final List<Widget> _homeBarWidgets = <Widget>[
     Text('data', style: TextStyle(fontSize: 40)),
     GameListWidget(),
     Text('data3', style: TextStyle(fontSize: 40))
@@ -47,7 +47,11 @@ class _homeScreenState extends State<homeScreen> {
             ),
             child: null /* add child content here */,
           ),
-          Center(child: _homeBarWidgets[_selectedtab])
+          IndexedStack(index: _selectedtab, children: [
+            Text('data', style: TextStyle(fontSize: 40)),
+            GameListWidget(),
+            Text('data3', style: TextStyle(fontSize: 40))
+          ])
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
