@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mind_sharp/widgets/Level_Details/level_details_widget.dart';
 import 'package:mind_sharp/widgets/auth.dart';
 import 'package:mind_sharp/widgets/home_screen.dart';
 import 'package:mind_sharp/widgets/sing_up.dart';
@@ -12,7 +13,8 @@ class App extends StatelessWidget {
       routes: {
         '/auth': (context) => AuthScreen(),
         '/sing_up': (context) => SingUpScreen(),
-        '/home': (context) => homeScreen()
+        '/home': (context) => homeScreen(),
+        '/home/level_details': (context) => LevelDetailsWidget(),
       },
       initialRoute: '/auth',
     );

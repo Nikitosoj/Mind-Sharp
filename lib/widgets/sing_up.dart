@@ -134,7 +134,7 @@ class __loginBoxState extends State<_loginBox> {
               shadowColor: Colors.black,
               color: Color.fromRGBO(32, 52, 122, 0.49),
               child: TextField(
-                  obscuringCharacter: ' ',
+                  obscuringCharacter: '*',
                   obscureText: true,
                   autocorrect: false,
                   enableSuggestions: false,
@@ -159,7 +159,7 @@ class __loginBoxState extends State<_loginBox> {
               shadowColor: Colors.black,
               color: Color.fromRGBO(32, 52, 122, 0.49),
               child: TextField(
-                  obscuringCharacter: ' ',
+                  obscuringCharacter: '*',
                   autocorrect: false,
                   enableSuggestions: false,
                   obscureText: true,

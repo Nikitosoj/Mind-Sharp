@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mind_sharp/widgets/game_list_widget.dart';
+import 'package:mind_sharp/widgets/settings_list_widget.dart';
 
 class homeScreen extends StatefulWidget {
   const homeScreen({super.key});
@@ -50,7 +51,7 @@ class _homeScreenState extends State<homeScreen> {
           IndexedStack(index: _selectedtab, children: [
             Text('data', style: TextStyle(fontSize: 40)),
             GameListWidget(),
-            Text('data3', style: TextStyle(fontSize: 40))
+            SettingsListWidget(),
           ])
         ],
       ),

@@ -3,11 +3,13 @@ import 'package:mind_sharp/widgets/result_circle.dart';
 import '../resources/resources.dart';
 
 class _Levels {
+  final int id;
   final String imageName;
   final String title;
   final String difficult;
   final double result;
   _Levels({
+    required this.id,
     required this.imageName,
     required this.title,
     required this.difficult,
@@ -15,64 +17,85 @@ class _Levels {
   });
 }
 
-class GameListWidget extends StatelessWidget {
+class GameListWidget extends StatefulWidget {
   GameListWidget({super.key});
+
+  @override
+  State<GameListWidget> createState() => _GameListWidgetState();
+}
+
+class _GameListWidgetState extends State<GameListWidget> {
+  void _onLevelTap(int index) {
+    final id = _gamelist[index].id;
+    Navigator.of(context).pushNamed('/home/level_details', arguments: id);
+  }
+
   final _gamelist = [
     _Levels(
+      id: 1,
       imageName: AppImage.level1,
       title: 'Level 1',
       difficult: 'Difficult : 1',
-      result: 100,
+      result: 77,
     ),
     _Levels(
+      id: 2,
       imageName: AppImage.level1,
       title: 'Level 2',
       difficult: 'Difficult : 1',
       result: 25,
     ),
     _Levels(
+      id: 3,
       imageName: AppImage.level1,
       title: 'Level 3',
       difficult: 'Difficult : 1',
       result: 45,
     ),
     _Levels(
+      id: 4,
       imageName: AppImage.level1,
       title: 'Level 4',
       difficult: 'Difficult : 1',
       result: 0,
     ),
     _Levels(
+      id: 5,
       imageName: AppImage.level1,
       title: 'Level 5',
       difficult: 'Difficult : 1',
       result: 27,
     ),
     _Levels(
+      id: 6,
       imageName: AppImage.level1,
       title: 'Level 6',
       difficult: 'Difficult : 1',
       result: 75,
     ),
     _Levels(
+      id: 7,
       imageName: AppImage.level1,
       title: 'Level 7',
       difficult: 'Difficult : 1',
       result: 0,
     ),
     _Levels(
+      id: 8,
       imageName: AppImage.level1,
       title: 'Level 8',
       difficult: 'Difficult : 1',
       result: 0,
     ),
     _Levels(
+      id: 9,
       imageName: AppImage.level1,
       title: 'Level 9',
       difficult: 'Difficult : 1',
       result: 0,
     ),
   ];
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -133,9 +156,7 @@ class GameListWidget extends StatelessWidget {
                   Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      onTap: () {
-                        print('object');
-                      },
+                      onTap: () => _onLevelTap(index),
                     ),
                   )
                 ],
