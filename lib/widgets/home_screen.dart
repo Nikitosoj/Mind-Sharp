@@ -51,7 +51,7 @@ class _homeScreenState extends State<homeScreen> {
           IndexedStack(index: _selectedtab, children: [
             Text('data', style: TextStyle(fontSize: 40)),
             GameListWidget(),
-            SettingsListWidget(),
+            Text('data3', style: TextStyle(fontSize: 40))
           ])
         ],
       ),
