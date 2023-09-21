@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mind_sharp/widgets/game_list_widget.dart';
+import 'package:mind_sharp/widgets/settings_list_widget.dart';
 
 class homeScreen extends StatefulWidget {
   const homeScreen({super.key});
@@ -10,7 +11,7 @@ class homeScreen extends StatefulWidget {
 
 class _homeScreenState extends State<homeScreen> {
   int _selectedtab = 0;
-  static const List<Widget> _homeBarWidgets = <Widget>[
+  static final List<Widget> _homeBarWidgets = <Widget>[
     Text('data', style: TextStyle(fontSize: 40)),
     GameListWidget(),
     Text('data3', style: TextStyle(fontSize: 40))
@@ -47,7 +48,7 @@ class _homeScreenState extends State<homeScreen> {
             ),
             child: null /* add child content here */,
           ),
-          Center(child: _homeBarWidgets[_selectedtab])
+          IndexedStack(index: _selectedtab, children: _homeBarWidgets)
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -55,11 +56,11 @@ class _homeScreenState extends State<homeScreen> {
           currentIndex: _selectedtab,
           onTap: _selectTab,
           unselectedItemColor: Colors.white,
-          items: [
+          items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(icon: Icon(Icons.gamepad), label: 'Games'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: 'Settings'),
+                icon: Icon(Icons.settings), label: 'Settings')
           ]),
     );
   }
