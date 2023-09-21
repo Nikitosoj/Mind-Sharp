@@ -48,11 +48,7 @@ class _homeScreenState extends State<homeScreen> {
             ),
             child: null /* add child content here */,
           ),
-          IndexedStack(index: _selectedtab, children: [
-            Text('data', style: TextStyle(fontSize: 40)),
-            GameListWidget(),
-            Text('data3', style: TextStyle(fontSize: 40))
-          ])
+          IndexedStack(index: _selectedtab, children: _homeBarWidgets)
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -60,11 +56,11 @@ class _homeScreenState extends State<homeScreen> {
           currentIndex: _selectedtab,
           onTap: _selectTab,
           unselectedItemColor: Colors.white,
-          items: [
+          items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(icon: Icon(Icons.gamepad), label: 'Games'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: 'Settings'),
+                icon: Icon(Icons.settings), label: 'Settings')
           ]),
     );
   }
